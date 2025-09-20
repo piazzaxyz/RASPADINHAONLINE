@@ -1,5 +1,3 @@
-'use client';
-
 import { Shield, Eye, Lock, Database, Users, AlertTriangle, FileText, CheckCircle } from 'lucide-react';
 
 export default function PoliticaPrivacidadePage() {
@@ -123,63 +121,6 @@ export default function PoliticaPrivacidadePage() {
                 <span className="text-gray-300">{right}</span>
               </div>
             ))}
-          </div>
-        </div>
-
-        {/* Data Retention */}
-        <div className="bg-neutral-700/50 rounded-xl p-8 border border-neutral-600 mb-12">
-          <div className="flex items-center space-x-3 mb-6">
-            <Database className="h-6 w-6 text-purple-500" />
-            <h2 className="text-2xl font-bold text-white">Retenção de Dados</h2>
-          </div>
-          <div className="space-y-4 text-gray-300">
-            <p>
-              <strong>Contas Ativas:</strong> Mantemos seus dados enquanto sua conta permanecer ativa 
-              e você continuar usando nossos serviços.
-            </p>
-            <p>
-              <strong>Contas Inativas:</strong> Dados de contas inativas por mais de 2 anos podem ser 
-              arquivados ou anonimizados.
-            </p>
-            <p>
-              <strong>Obrigações Legais:</strong> Alguns dados são mantidos por períodos específicos 
-              conforme exigências regulamentares (até 5 anos para transações financeiras).
-            </p>
-            <p>
-              <strong>Exclusão:</strong> Você pode solicitar a exclusão de seus dados a qualquer momento, 
-              sujeito às nossas obrigações legais.
-            </p>
-          </div>
-        </div>
-
-        {/* Cookies */}
-        <div className="bg-neutral-700/50 rounded-xl p-8 border border-neutral-600 mb-12">
-          <div className="flex items-center space-x-3 mb-6">
-            <Eye className="h-6 w-6 text-purple-500" />
-            <h2 className="text-2xl font-bold text-white">Cookies e Tecnologias</h2>
-          </div>
-          <div className="space-y-4 text-gray-300">
-            <p>
-              Utilizamos cookies e tecnologias similares para melhorar sua experiência:
-            </p>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div>
-                <h4 className="font-semibold text-white mb-2">Cookies Essenciais</h4>
-                <p className="text-sm">Necessários para o funcionamento básico do site e segurança da sua conta.</p>
-              </div>
-              <div>
-                <h4 className="font-semibold text-white mb-2">Cookies Analíticos</h4>
-                <p className="text-sm">Ajudam-nos a entender como você usa o site para melhorar nossos serviços.</p>
-              </div>
-              <div>
-                <h4 className="font-semibold text-white mb-2">Cookies de Preferência</h4>
-                <p className="text-sm">Lembram suas configurações e preferências para personalizar sua experiência.</p>
-              </div>
-              <div>
-                <h4 className="font-semibold text-white mb-2">Cookies de Marketing</h4>
-                <p className="text-sm">Utilizados para exibir promoções e conteúdo relevante aos seus interesses.</p>
-              </div>
-            </div>
           </div>
         </div>
 

@@ -1,7 +1,6 @@
-"use client"
-
 import { FileText, Calendar, CheckCircle, AlertTriangle, Info, Zap } from "lucide-react"
 import Link from "next/link"
+import NotificationButton from "@/components/NotificationButton"
 
 export default function HistoricoVersoesPage() {
   const versions = [
@@ -156,30 +155,6 @@ export default function HistoricoVersoesPage() {
     }
   }
 
-  const handleActivateNotifications = async () => {
-    if (!("Notification" in window)) {
-      alert("Este navegador não suporta notificações.")
-      return
-    }
-
-    if (Notification.permission === "granted") {
-      alert("Notificações já estão ativadas!")
-      return
-    }
-
-    if (Notification.permission !== "denied") {
-      const permission = await Notification.requestPermission()
-      if (permission === "granted") {
-        new Notification("Raspe & Brilhe", {
-          body: "Notificações ativadas com sucesso! Você receberá atualizações sobre novas versões.",
-          icon: "/LOGO DO RASPE & BRILHE.svg",
-        })
-      }
-    } else {
-      alert("Notificações foram negadas. Ative nas configurações do navegador.")
-    }
-  }
-
   return (
     <div className="min-h-screen bg-neutral-600 pt-16">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
@@ -265,12 +240,7 @@ export default function HistoricoVersoesPage() {
             testadas rigorosamente antes do lançamento.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button
-              onClick={handleActivateNotifications}
-              className="px-6 py-3 bg-purple-600 text-white font-semibold rounded-lg hover:bg-purple-700 transition-colors"
-            >
-              Ativar Notificações
-            </button>
+            <NotificationButton />
             <Link
               href="/roadmap"
               className="px-6 py-3 border border-purple-500 text-purple-400 font-semibold rounded-lg hover:bg-purple-500/10 transition-colors text-center"

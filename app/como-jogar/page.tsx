@@ -1,5 +1,3 @@
-"use client"
-
 import { Play, CreditCard, Gift, Trophy, ArrowRight, CheckCircle, AlertCircle, Star } from "lucide-react"
 import Link from "next/link"
 

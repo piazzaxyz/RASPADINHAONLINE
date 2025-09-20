@@ -8,6 +8,14 @@
   }
 }
 
+/* REGRA PARA PAUSAR A ANIMAÇÃO NO HOVER */
+@layer components {
+  .animate-scroll-slow:hover {
+    animation-play-state: paused;
+  }
+}
+
+/* 👇 OS DOIS BLOCOS '@layer base' FORAM UNIFICADOS AQUI 👇 */
 @layer base {
   :root {
     --background: 0 0% 100%;
@@ -44,6 +52,7 @@
     --sidebar-border: 220 13% 91%;
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
+
   .dark {
     --background: 0 0% 3.9%;
     --foreground: 0 0% 98%;
@@ -78,12 +87,12 @@
     --sidebar-border: 240 3.7% 15.9%;
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
-}
 
-@layer base {
+  /* Estilos base globais */
   * {
-    @apply border-border;
+    border-color: hsl(var(--border));
   }
+
   body {
     @apply bg-background text-foreground;
   }

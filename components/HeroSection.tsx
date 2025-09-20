@@ -2,12 +2,15 @@
 
 import { useState, useEffect } from "react"
 import Link from "next/link"
-import { ChevronLeft, ChevronRight } from "lucide-react"
+import { ChevronLeft, ChevronRight, Play, Sparkles } from "lucide-react"
 
 export default function HeroSection() {
   const [currentBanner, setCurrentBanner] = useState(0)
 
-  const banners = ["/BANNER NOVO.png", "/2400x910px (2).png"]
+  const banners = [
+    "/BANNER NOVO.png",
+    "/2400x910px (2).png"
+  ]
 
   // Auto-rotate banners every 5 seconds
   useEffect(() => {
@@ -27,13 +30,12 @@ export default function HeroSection() {
   }
 
   return (
-    <section className="relative overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-br from-emerald-900/20 via-gray-900 to-gray-900" />
-      <div className="absolute inset-0 bg-gradient-to-br from-purple-900/20 via-neutral-700 to-neutral-700" />
-      <div className="absolute inset-0 bg-grid-pattern opacity-10" />
-
+    <section className="relative overflow-hidden bg-gradient-to-br from-neutral-700 via-neutral-600 to-neutral-700">
+      <div className="absolute inset-0 bg-gradient-to-br from-purple-900/20 via-transparent to-purple-900/20" />
+      
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24">
-        <div className="flex justify-center">
+        {/* Main Banner Carousel */}
+        <div className="flex justify-center mb-16">
           <div className="relative max-w-6xl w-full">
             <div className="relative overflow-hidden rounded-2xl shadow-2xl">
               <div
@@ -44,7 +46,7 @@ export default function HeroSection() {
                   <div key={index} className="w-full flex-shrink-0">
                     <Link href="/raspadinhas">
                       <img
-                        src={banner || "/placeholder.svg"}
+                        src={banner}
                         alt={`Banner promocional ${index + 1}`}
                         className="w-full h-auto object-cover rounded-2xl cursor-pointer hover:scale-105 transition-transform duration-300"
                       />
@@ -83,17 +85,32 @@ export default function HeroSection() {
           </div>
         </div>
 
-        {/* Bottom Banner */}
-        <div className="mt-16 bg-gradient-to-r from-purple-900/30 to-purple-800/30 rounded-2xl p-8 border border-purple-500/20">
-          <div className="text-center space-y-4">
-            <h2 className="text-2xl md:text-3xl font-bold text-white">
-              AQUI R$1,00 PODE VIRAR R$1.000 EM UMA RASPADINHA!
-            </h2>
-            <p className="text-lg text-purple-300 font-semibold">BASTA UMA RASPADA PARA MUDAR A SUA VIDA</p>
-            <div className="flex justify-center mt-6">
+        {/* Call to Action */}
+        <div className="bg-gradient-to-r from-purple-900/40 to-purple-800/40 rounded-2xl p-8 border border-purple-500/20 backdrop-blur-sm">
+          <div className="text-center space-y-6">
+            <div className="flex justify-center items-center space-x-3 mb-4">
+              <Sparkles className="h-8 w-8 text-yellow-500 animate-pulse" />
+              <h2 className="text-3xl md:text-4xl font-bold text-white">
+                AQUI R$1,00 PODE VIRAR R$1.000!
+              </h2>
+              <Sparkles className="h-8 w-8 text-yellow-500 animate-pulse" />
+            </div>
+            
+            <p className="text-xl text-purple-300 font-semibold">
+              BASTA UMA RASPADA PARA MUDAR A SUA VIDA
+            </p>
+            
+            <div className="flex flex-col sm:flex-row gap-4 justify-center mt-8">
               <Link href="/raspadinhas">
-                <button className="px-8 py-3 bg-purple-600 text-white font-bold rounded-lg hover:bg-purple-700 transition-colors hover-scale">
-                  RASPAR AGORA
+                <button className="px-8 py-4 bg-purple-600 hover:bg-purple-700 text-white font-bold text-lg rounded-xl transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-purple-500/25 flex items-center space-x-2">
+                  <Play className="h-5 w-5" />
+                  <span>RASPAR AGORA</span>
+                </button>
+              </Link>
+              
+              <Link href="/como-jogar">
+                <button className="px-8 py-4 border-2 border-purple-400 text-purple-400 hover:bg-purple-400/10 font-bold text-lg rounded-xl transition-all duration-300 transform hover:scale-105">
+                  COMO JOGAR
                 </button>
               </Link>
             </div>

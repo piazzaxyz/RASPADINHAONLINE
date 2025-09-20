@@ -1,6 +1,9 @@
+// app/layout.tsx
+
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import './globals.css';
+import MainLayout from '@/components/MainLayout'; // 1. Importe o novo componente
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -17,7 +20,10 @@ export default function RootLayout({
   return (
     <html lang="pt-BR">
       <body className={inter.className}>
-        {children}
+        {/* 2. Envolva o conteúdo (children) com o MainLayout */}
+        <MainLayout>
+          {children}
+        </MainLayout>
       </body>
     </html>
   );
