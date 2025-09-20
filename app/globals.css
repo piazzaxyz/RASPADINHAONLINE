@@ -90,7 +90,7 @@
   }
 }
 
-/* Custom animations and utilities */
+/* Custom animations and utilities optimized for mobile */
 .hover-scale {
   transition: transform 0.2s ease-in-out;
 }
@@ -99,6 +99,21 @@
   transform: scale(1.02);
 }
 
+/* Animação realista e lenta para carrossel de ganhadores */
+@keyframes scroll-realistic {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-scroll-realistic {
+  animation: scroll-realistic 120s linear infinite;
+}
+
+/* Animação original mantida para compatibilidade */
 @keyframes scroll {
   0% {
     transform: translateX(0);
@@ -109,14 +124,62 @@
 }
 
 .animate-scroll {
-  animation: scroll 30s linear infinite;
+  animation: scroll 90s linear infinite;
 }
 
-.animate-scroll:hover {
+/* Pausar animação no hover para melhor UX */
+.animate-scroll:hover,
+.animate-scroll-realistic:hover {
   animation-play-state: paused;
+}
+
+/* Otimizações para performance em mobile */
+@media (max-width: 768px) {
+  .animate-scroll {
+    animation-duration: 120s; /* Mais lento em mobile */
+  }
+  
+  .animate-scroll-realistic {
+    animation-duration: 150s; /* Ainda mais lento em mobile */
+  }
+}
+
+/* Reduzir animações em dispositivos com preferência de movimento reduzido */
+@media (prefers-reduced-motion: reduce) {
+  .animate-scroll,
+  .animate-scroll-realistic,
+  .animate-pulse,
+  .animate-bounce,
+  .animate-spin {
+    animation: none;
+  }
+  
+  .hover-scale:hover {
+    transform: none;
+  }
 }
 
 .bg-grid-pattern {
   background-image: radial-gradient(circle, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
   background-size: 20px 20px;
+}
+
+/* Melhor responsividade para textos */
+@media (max-width: 640px) {
+  .text-4xl {
+    @apply text-2xl;
+  }
+  .text-3xl {
+    @apply text-xl;
+  }
+  .text-2xl {
+    @apply text-lg;
+  }
+}
+
+/* Otimizações para touch em mobile */
+@media (pointer: coarse) {
+  button, .cursor-pointer {
+    min-height: 44px; /* Tamanho mínimo recomendado para touch */
+  }
 }

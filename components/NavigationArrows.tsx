@@ -1,13 +1,13 @@
 "use client"
 
 import React, { useState, useEffect } from "react"
+import { ArrowUp } from "lucide-react"
 
-const NavigationArrows: React.FC = () => {
+export default function NavigationArrows() {
   const [showUpArrow, setShowUpArrow] = useState(false)
 
   useEffect(() => {
     const handleScroll = () => {
-      // Show up arrow when user scrolls down more than 300px
       setShowUpArrow(window.scrollY > 300)
     }
 
@@ -15,27 +15,21 @@ const NavigationArrows: React.FC = () => {
     return () => window.removeEventListener("scroll", handleScroll)
   }, [])
 
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" })
+  }
+
+  if (!showUpArrow) return null
+
   return (
-    <div className="fixed bottom-4 right-4 flex gap-2">
-      {showUpArrow && (
-        <button
-          onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-          className="bg-white/10 hover:bg-white/20 p-2 rounded-full"
-        >
-          ↑
-        </button>
-      )}
+    <div className="fixed bottom-20 left-6 z-40">
       <button
-        onClick={() => window.scrollTo({ top: document.body.scrollHeight, behavior: "smooth" })}
-        className="bg-white/10 hover:bg-white/20 p-2 rounded-full"
+        onClick={scrollToTop}
+        className="bg-purple-600 hover:bg-purple-700 text-white p-3 rounded-full shadow-lg transition-all duration-200 hover:scale-110 active:scale-95"
+        aria-label="Voltar ao topo"
       >
-        ↓
+        <ArrowUp className="h-5 w-5" />
       </button>
     </div>
   )
 }
-
-export default NavigationArrows
-
-
-

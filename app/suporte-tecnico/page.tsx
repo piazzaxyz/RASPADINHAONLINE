@@ -1,5 +1,3 @@
-'use client';
-
 import { Settings, AlertCircle, Wifi, CreditCard, User, Phone, MessageCircle, Mail, Clock, CheckCircle } from 'lucide-react';
 
 export default function SuporteTecnicoPage() {

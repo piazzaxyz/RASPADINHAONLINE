@@ -1,5 +1,3 @@
-"use client"
-
 import { FileText, AlertTriangle, Shield, CreditCard, Users, Gavel, Lock, CheckCircle } from "lucide-react"
 import Link from "next/link"
 
@@ -132,55 +130,7 @@ export default function TermosUsoPage() {
           </div>
         </div>
 
-        {/* Account Termination */}
-        <div className="bg-neutral-700/50 rounded-xl p-8 border border-neutral-600 mb-12">
-          <div className="flex items-center space-x-3 mb-6">
-            <AlertTriangle className="h-6 w-6 text-purple-500" />
-            <h2 className="text-2xl font-bold text-white">Suspensão e Encerramento</h2>
-          </div>
-          <div className="space-y-4 text-gray-300">
-            <p>
-              <strong>Suspensão Temporária:</strong> Podemos suspender temporariamente sua conta para investigações de
-              segurança ou violações dos termos.
-            </p>
-            <p>
-              <strong>Encerramento Permanente:</strong> Contas podem ser permanentemente encerradas por violações
-              graves, atividades fraudulentas ou múltiplas infrações.
-            </p>
-            <p>
-              <strong>Autoexclusão:</strong> Você pode solicitar o fechamento permanente de sua conta a qualquer momento
-              por motivos de jogo responsável.
-            </p>
-            <p>
-              <strong>Saldos em Conta:</strong> Saldos legítimos serão devolvidos conforme nossos procedimentos de
-              retirada, sujeito a verificações necessárias.
-            </p>
-          </div>
-        </div>
-
-        {/* Disclaimers */}
-        <div className="bg-neutral-700/50 rounded-xl p-8 border border-neutral-600 mb-12">
-          <div className="flex items-center space-x-3 mb-6">
-            <Shield className="h-6 w-6 text-purple-500" />
-            <h2 className="text-2xl font-bold text-white">Limitação de Responsabilidade</h2>
-          </div>
-          <div className="space-y-4 text-gray-300">
-            <p>
-              Os jogos oferecidos em nossa plataforma são baseados em sorte e não há garantia de ganhos. Você joga por
-              sua própria conta e risco.
-            </p>
-            <p>
-              Não nos responsabilizamos por perdas resultantes de falhas técnicas, interrupções de internet, ou outros
-              problemas fora do nosso controle direto.
-            </p>
-            <p>
-              Nossa responsabilidade máxima é limitada ao valor do saldo em sua conta no momento do incidente, exceto
-              onde proibido por lei.
-            </p>
-          </div>
-        </div>
-
-        {/* Changes and Contact */}
+        {/* Contact */}
         <div className="bg-gradient-to-r from-purple-900/30 to-purple-800/30 rounded-xl p-8 border border-purple-500/20 text-center">
           <FileText className="h-8 w-8 text-purple-400 mx-auto mb-4" />
           <h3 className="text-2xl font-bold text-white mb-4">Alterações nos Termos</h3>

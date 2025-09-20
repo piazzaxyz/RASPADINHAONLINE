@@ -1,5 +1,3 @@
-"use client"
-
 import { Calendar, Target, Zap, Star, ArrowRight, Home } from "lucide-react"
 import Link from "next/link"
 
